@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nono Pink | نظمي روتينك معي</title>
+
+    <style>
+
+        /* =========================
+           الإعدادات العامة
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff7fa;
+            color: #563944;
+            transition: 0.3s;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+
+        /* =========================
+           الشريط العلوي
+        ========================= */
+
+        header {
+            background: white;
+            height: 75px;
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 2px 15px rgba(200, 100, 140, 0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #e85b94;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: #654653;
+            font-size: 15px;
+        }
+
+        nav button:hover {
+            color: #e85b94;
+        }
+
+        .dark-button {
+            border: none;
+            background: #fff0f6;
+            padding: 9px 12px;
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           الصفحات
+        ========================= */
+
+        .page {
+            min-height: calc(100vh - 75px);
+        }
+
+
+        /* =========================
+           الصفحة الرئيسية
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+            padding: 70px 7%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .welcome-small {
+            color: #e85b94;
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #e85b94;
+        }
+
+        .hero-description {
+            color: #806b74;
+            line-height: 2;
+            font-size: 18px;
+            max-width: 560px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-button,
+        .secondary-button {
+            border-radius: 14px;
+            padding: 15px 27px;
+            font-size: 16px;
+            text-decoration: none;
+            border: none;
+        }
+
+        .primary-button {
+            background: #ed6da2;
+            color: white;
+            box-shadow: 0 8px 20px rgba(237, 109, 162, 0.25);
+        }
+
+        .primary-button:hover {
+            background: #e45791;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background: white;
+            border: 2px solid #edb5ca;
+            color: #df5b91;
+        }
+
+
+        /* =========================
+           بطاقة الروتين
+        ========================= */
+
+        .routine-preview {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .preview-card {
+            width: 450px;
+            max-width: 100%;
+
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+
+            box-shadow: 0 20px 50px rgba(190, 100, 140, 0.15);
+        }
+
+        .preview-card h2 {
+            text-align: center;
+            color: #e85b94;
+            margin-bottom: 25px;
+        }
+
+        .preview-task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: #fff5f9;
+
+            padding: 14px;
+            margin-bottom: 10px;
+
+            border-radius: 14px;
+        }
+
+        .preview-time {
+            color: #e85b94;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           المميزات
+        ========================= */
+
+        .features {
+            padding: 80px 7%;
+            background: #fff0f6;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .features h2 span {
+            color: #e85b94;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 22px;
+
+            box-shadow: 0 8px 25px rgba(190, 100, 140, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #df5b91;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #806b74;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           صفحات الحساب
+        ========================= */
+
+        .form-page {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+        }
+
+        .form-card {
+            width: 430px;
+            max-width: 100%;
+
+            background: white;
+            padding: 40px;
+
+            border-radius: 28px;
+
+            box-shadow: 0 15px 50px rgba(200, 100, 140, 0.12);
+        }
+
+        .form-card .form-logo {
+            text-align: center;
+            color: #e85b94;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .form-card h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .form-description {
+            text-align: center;
+            color: #91737f;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 14px;
+
+            border: 1px solid #edc5d5;
+            border-radius: 12px;
+
+            outline: none;
+            background: #fffafd;
+
+            font-size: 15px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #e85b94;
+        }
+
+        .form-button {
+            width: 100%;
+            border: none;
+
+            padding: 15px;
+
+            background: #ed6da2;
+            color: white;
+
+            border-radius: 13px;
+
+            font-size: 17px;
+        }
+
+        .form-button:hover {
+            background: #e45791;
+        }
+
+        .form-link {
+            display: block;
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: #df5b91;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           لوحة التحكم
+        ========================= */
+
+        .dashboard {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto;
+        }
+
+        .dashboard-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .welcome h1 span {
+            color: #e85b94;
+        }
+
+        .date {
+            color: #8b707b;
+        }
+
+        .logout-button {
+            background: white;
+            color: #df5b91;
+
+            border: 1px solid #edb5ca;
+
+            padding: 10px 18px;
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           الإنجاز
+        ========================= */
+
+        .progress-card {
+            background: white;
+            padding: 25px;
+
+            border-radius: 22px;
+
+            box-shadow: 0 10px 35px rgba(200, 100, 140, 0.08);
+
+            margin-bottom: 35px;
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .percentage {
+            color: #e85b94;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 13px;
+
+            background: #f8dfe9;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+
+            background: #ed6da2;
+
+            transition: 0.4s;
+        }
+
+
+        /* =========================
+           جدول الأنشطة
+        ========================= */
+
+        .day-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .add-button {
+            border: none;
+            background: #ed6da2;
+            color: white;
+
+            padding: 12px 20px;
+            border-radius: 12px;
+        }
+
+        .tasks {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .task {
+            background: white;
+
+            padding: 18px 22px;
+
+            border-radius: 17px;
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            box-shadow: 0 5px 20px rgba(200, 100, 140, 0.06);
+        }
+
+        .task-time {
+            color: #e85b94;
+            font-weight: bold;
+            min-width: 60px;
+        }
+
+        .task-name {
+            flex: 1;
+            font-size: 17px;
+        }
+
+        .task-category {
+            color: #9c7b87;
+            font-size: 13px;
+        }
+
+        .check-button {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            border: 2px solid #edb5ca;
+
+            background: white;
+
+            color: white;
+        }
+
+        .check-button.completed {
+            background: #ed6da2;
+            border-color: #ed6da2;
+        }
+
+        .delete-button {
+            border: none;
+            background: transparent;
+            color: #c7839f;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           النافذة المنبثقة
+        ========================= */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(80, 40, 55, 0.35);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 200;
+        }
+
+        .modal-card {
+            width: 450px;
+            max-width: 100%;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 25px;
+        }
+
+        .modal-card h2 {
+            margin-bottom: 25px;
+            color: #573945;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cancel-button {
+            flex: 1;
+            border: none;
+            background: #f5e5eb;
+            padding: 13px;
+            border-radius: 12px;
+        }
+
+        .save-button {
+            flex: 1;
+            border: none;
+            background: #ed6da2;
+            color: white;
+            padding: 13px;
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           الصفحات القانونية
+        ========================= */
+
+        .legal-page {
+            width: 85%;
+            max-width: 900px;
+
+            margin: 50px auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            line-height: 2;
+        }
+
+        .legal-page h1 {
+            color: #e85b94;
+            margin-bottom: 20px;
+        }
+
+        .legal-page h2 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           الوضع الليلي
+        ========================= */
+
+        body.dark {
+            background: #21171d;
+            color: #f8eaf0;
+        }
+
+        body.dark header,
+        body.dark .form-card,
+        body.dark .preview-card,
+        body.dark .feature,
+        body.dark .progress-card,
+        body.dark .task,
+        body.dark .legal-page {
+            background: #30232a;
+        }
+
+        body.dark nav button,
+        body.dark .task-name,
+        body.dark .welcome h1,
+        body.dark .day-title h2,
+        body.dark .form-card h1,
+        body.dark .modal-card h2 {
+            color: #f8eaf0;
+        }
+
+        body.dark .modal-card {
+            background: #30232a;
+        }
+
+
+        /* =========================
+           الهاتف
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .feature-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .dashboard-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .task {
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .task-category {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     الشريط العلوي
+================================================== -->
+
+<header>
+
+    <div class="logo">
+        nono pink ♡
+    </div>
+
+    <nav>
+
+        <button onclick="showPage('home')">
+            الرئيسية
+        </button>
+
+        <button onclick="showPage('features')">
+            المميزات
+        </button>
+
+        <button onclick="showPage('dashboard')">
+            لوحة التحكم
+        </button>
+
+        <button onclick="showPage('login')">
+            تسجيل الدخول
+        </button>
+
+        <button onclick="showPage('signup')">
+            إنشاء حساب
+        </button>
+
+        <button class="dark-button" onclick="toggleDarkMode()">
+            🌙
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==================================================
+     الصفحة الرئيسية
+================================================== -->
+
+<section id="home" class="page">
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <p class="welcome-small">
+                ✨ أهلاً بكِ في nono pink
+            </p>
+
+            <h1>
+                نظمي <span>روتينك</span><br>
+                معي ♡
+            </h1>
+
+            <p class="hero-description">
+                خططي ليومك، حددي أنشطتك وأوقاتها،
+                ودعي nono pink يذكّركِ بمهامك
+                في الوقت المناسب.
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    class="primary-button"
+                    onclick="showPage('signup')">
+
+                    ✨ ابدئي الآن
+
+                </button>
+
+                <button
+                    class="secondary-button"
+                    onclick="showPage('login')">
+
+                    تسجيل الدخول
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="routine-preview">
+
+            <div class="preview-card">
+
+                <h2>
+                    🌷 جدول يومي
+                </h2>
+
+                <div class="preview-task">
+                    <span class="preview-time">07:00</span>
+                    <span>🌞 الاستيقاظ</span>
+                    <span>✓</span>
+                </div>
+
+                <div class="preview-task">
+                    <span class="preview-time">08:00</span>
+                    <span>📚 الدراسة</span>
+                    <span>✓</span>
+                </div>
+
+                <div class="preview-task">
+                    <span class="preview-time">12:30</span>
+                    <span>🍽️ الغداء</span>
+                    <span>✓</span>
+                </div>
+
+                <div class="preview-task">
+                    <span class="preview-time">17:00</span>
+                    <span>💗 وقت حر</span>
+                    <span>✓</span>
+                </div>
+
+                <div class="preview-task">
+                    <span class="preview-time">20:00</span>
+                    <span>📖 القراءة</span>
+                    <span>✓</span>
+                </div>
+
+                <div class="preview-task">
+                    <span class="preview-time">22:00</span>
+                    <span>🌙 النوم</span>
+                    <span>✓</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="features" id="features">
+
+        <h2>
+            لماذا <span>nono pink</span>؟
+        </h2>
+
+        <div class="feature-container">
+
+            <div class="feature">
+                <div class="feature-icon">🔔</div>
+                <h3>تذكيرات</h3>
+                <p>تذكيرات لأنشطتك في الوقت المناسب.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <h3>تنظيم</h3>
+                <p>رتبي يومك بطريقة سهلة وواضحة.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>تقدم يومي</h3>
+                <p>تابعي نسبة إنجازك خلال اليوم.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💗</div>
+                <h3>تصميم جميل</h3>
+                <p>واجهة بسيطة وناعمة ومريحة.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔐</div>
+                <h3>خصوصية</h3>
+                <p>نهتم بحماية بيانات المستخدمين.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     صفحة إنشاء الحساب
+================================================== -->
+
+<section id="signup" class="page hidden">
+
+    <div class="form-page">
+
+        <div class="form-card">
+
+            <div class="form-logo">
+                nono pink ♡
+            </div>
+
+            <h1>
+                إنشاء حساب 🌸
+            </h1>
+
+            <p class="form-description">
+                ابدئي بتنظيم يومك معنا
+            </p>
+
+
+            <form id="signupForm">
+
+                <div class="input-group">
+
+                    <label>
+                        الاسم
+                    </label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder="اكتبي اسمك"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        البريد الإلكتروني
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="example@email.com"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        كلمة المرور
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        تأكيد كلمة المرور
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupConfirm"
+                        required>
+
+                </div>
+
+
+                <button
+                    class="form-button"
+                    type="submit">
+
+                    ✨ إنشاء الحساب
+
+                </button>
+
+            </form>
+
+
+            <span
+                class="form-link"
+                onclick="showPage('login')">
+
+                لدي حساب بالفعل ← تسجيل الدخول
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     صفحة تسجيل الدخول
+================================================== -->
+
+<section id="login" class="page hidden">
+
+    <div class="form-page">
+
+        <div class="form-card">
+
+            <div class="form-logo">
+                nono pink ♡
+            </div>
+
+            <h1>
+                تسجيل الدخول 🔐
+            </h1>
+
+            <p class="form-description">
+                عودي إلى روتينك اليومي
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label>
+                        البريد الإلكتروني
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        كلمة المرور
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="form-button">
+
+                    تسجيل الدخول
+
+                </button>
+
+            </form>
+
+
+            <span
+                class="form-link"
+                onclick="showPage('signup')">
+
+                إنشاء حساب جديد 🌸
+
+            </span>
+
+
+            <span
+                class="form-link"
+                onclick="alert('في النسخة الحقيقية سنضيف استعادة كلمة المرور هنا.')">
+
+                نسيتِ كلمة المرور؟
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     لوحة التحكم
+================================================== -->
+
+<section id="dashboard" class="page hidden">
+
+    <main class="dashboard">
+
+
+        <div class="dashboard-top">
+
+            <div class="welcome">
+
+                <h1>
+                    مرحبًا <span id="userName">نرجس</span> 🌷
+                </h1>
+
+                <p class="date" id="todayDate">
+                </p>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                تسجيل الخروج
+
+            </button>
+
+        </div>
+
+
+        <!-- نسبة الإنجاز -->
+
+        <div class="progress-card">
+
+            <div class="progress-top">
+
+                <strong>
+                    إنجاز اليوم ✨
+                </strong>
+
+                <span
+                    class="percentage"
+                    id="percentage">
+
+                    0%
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    id="progress">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- جدول اليوم -->
+
+        <div class="day-title">
+
+            <h2>
+                📅 جدول اليوم
+            </h2>
+
+            <button
+                class="add-button"
+                onclick="openModal()">
+
+                + إضافة نشاط
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="tasks"
+            id="tasks">
+
+        </div>
+
+
+    </main>
+
+</section>
+
+
+
+<!-- ==================================================
+     صفحة الخصوصية
+================================================== -->
+
+<section id="privacy" class="page hidden">
+
+    <div class="legal-page">
+
+        <h1>
+            سياسة الخصوصية 🔐
+        </h1>
+
+        <p>
+            توضح هذه الصفحة بشكل عام كيفية التعامل
+            مع بيانات مستخدمي الموقع.
+        </p>
+
+        <h2>
+            البيانات
+        </h2>
+
+        <p>
+            قد يحتاج الموقع إلى بيانات مثل الاسم
+            والبريد الإلكتروني والأنشطة التي يضيفها المستخدم.
+        </p>
+
+        <h2>
+            استخدام البيانات
+        </h2>
+
+        <p>
+            تستخدم البيانات لتوفير خدمة تنظيم الروتين
+            وتحسين تجربة المستخدم.
+        </p>
+
+        <h2>
+            حذف الحساب
+        </h2>
+
+        <p>
+            في النسخة النهائية يجب توفير طريقة واضحة
+            لحذف الحساب والبيانات.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     صفحة الشروط
+================================================== -->
+
+<section id="terms" class="page hidden">
+
+    <div class="legal-page">
+
+        <h1>
+            شروط الاستخدام 📜
+        </h1>
+
+        <p>
+            باستخدام الموقع يوافق المستخدم على
+            الالتزام بالقواعد والشروط الخاصة بالخدمة.
+        </p>
+
+        <h2>
+            الاستخدام المسؤول
+        </h2>
+
+        <p>
+            يجب عدم استخدام الموقع بطريقة تضر بالمستخدمين
+            أو بالخدمة.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     نافذة إضافة نشاط
+================================================== -->
+
+<div
+    class="modal hidden"
+    id="activityModal">
+
+
+    <div class="modal-card">
+
+        <h2>
+            ➕ إضافة نشاط
+        </h2>
+
+
+        <div class="input-group">
+
+            <label>
+                اسم النشاط
+            </label>
+
+            <input
+                type="text"
+                id="activityName"
+                placeholder="مثلاً: الدراسة">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                وقت البداية
+            </label>
+
+            <input
+                type="time"
+                id="activityTime">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                نوع النشاط
+            </label>
+
+            <select id="activityCategory">
+
+                <option>📚 دراسة</option>
+                <option>🏃 رياضة</option>
+                <option>🍽️ طعام</option>
+                <option>🧹 أعمال منزلية</option>
+                <option>🎨 هواية</option>
+                <option>😴 نوم</option>
+                <option>📝 أخرى</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                التذكير
+            </label>
+
+            <select id="activityReminder">
+
+                <option value="yes">
+                    🔔 تشغيل
+                </option>
+
+                <option value="no">
+                    🔕 إيقاف
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-buttons">
+
+            <button
+                class="cancel-button"
+                onclick="closeModal()">
+
+                إلغاء
+
+            </button>
+
+
+            <button
+                class="save-button"
+                onclick="addActivity()">
+
+                حفظ النشاط
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* ==================================================
+   بيانات الموقع
+================================================== */
+
+let activities =
+    JSON.parse(localStorage.getItem("nonoActivities")) || [];
+
+
+/* ==================================================
+   التنقل بين الصفحات
+================================================== */
+
+function showPage(pageId) {
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+
+        page.classList.add("hidden");
+
+    });
+
+
+    const selectedPage =
+        document.getElementById(pageId);
+
+    if (selectedPage) {
+
+        selectedPage.classList.remove("hidden");
+
+    }
+
+
+    if (pageId === "dashboard") {
+
+        loadDashboard();
+
+    }
+
+}
+
+
+/* ==================================================
+   إنشاء الحساب
+================================================== */
+
+document
+    .getElementById("signupForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("signupName").value.trim();
+
+        const email =
+            document.getElementById("signupEmail").value.trim();
+
+        const password =
+            document.getElementById("signupPassword").value;
+
+        const confirm =
+            document.getElementById("signupConfirm").value;
+
+
+        if (password !== confirm) {
+
+            alert("كلمتا المرور غير متطابقتين 🌸");
+
+            return;
+
+        }
+
+
+        if (password.length < 6) {
+
+            alert("يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.");
+
+            return;
+
+        }
+
+
+        /*
+          ملاحظة:
+          هذا نموذج تجريبي فقط.
+          لا نخزن كلمة المرور في localStorage.
+        */
+
+        const user = {
+
+            name: name,
+
+            email: email
+
+        };
+
+
+        localStorage.setItem(
+            "nonoUser",
+            JSON.stringify(user)
+        );
+
+
+        alert(
+            "تم إنشاء الحساب تجريبيًا بنجاح 🌷"
+        );
+
+
+        showPage("dashboard");
+
+    });
+
+
+
+/* ==================================================
+   تسجيل الدخول
+================================================== */
+
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+            document.getElementById("loginEmail").value.trim();
+
+
+        const savedUser =
+            JSON.parse(localStorage.getItem("nonoUser"));
+
+
+        if (!savedUser) {
+
+            alert(
+                "لا يوجد حساب تجريبي. أنشئي حسابًا أولًا 🌸"
+            );
+
+            return;
+
+        }
+
+
+        if (email !== savedUser.email) {
+
+            alert(
+                "البريد الإلكتروني غير موجود في الحساب التجريبي."
+            );
+
+            return;
+
+        }
+
+
+        showPage("dashboard");
+
+    });
+
+
+
+/* ==================================================
+   لوحة التحكم
+================================================== */
+
+function loadDashboard() {
+
+    const savedUser =
+        JSON.parse(localStorage.getItem("nonoUser"));
+
+
+    if (savedUser) {
+
+        document.getElementById("userName").textContent =
+            savedUser.name;
+
+    }
+
+
+    const today =
+        new Date();
+
+
+    const dateText =
+        today.toLocaleDateString(
+            "ar-DZ",
+            {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+
+    document.getElementById("todayDate").textContent =
+        dateText;
+
+
+    renderActivities();
+
+}
+
+
+
+/* ==================================================
+   عرض الأنشطة
+================================================== */
+
+function renderActivities() {
+
+    const container =
+        document.getElementById("tasks");
+
+
+    container.innerHTML = "";
+
+
+    /*
+      ترتيب الأنشطة حسب الوقت
+    */
+
+    activities.sort(function(a, b) {
+
+        return a.time.localeCompare(b.time);
+
+    });
+
+
+    activities.forEach(function(activity, index) {
+
+
+        const task =
+            document.createElement("div");
+
+        task.className = "task";
+
+
+        task.innerHTML = `
+
+            <span class="task-time">
+                ${activity.time}
+            </span>
+
+            <span class="task-name">
+                ${activity.name}
+            </span>
+
+            <span class="task-category">
+                ${activity.category}
+            </span>
+
+            <button
+                class="check-button ${activity.completed ? "completed" : ""}"
+                onclick="completeActivity(${index})">
+
+                ${activity.completed ? "✓" : ""}
+
+            </button>
+
+            <button
+                class="delete-button"
+                onclick="deleteActivity(${index})">
+
+                🗑️
+
+            </button>
+
+        `;
+
+
+        container.appendChild(task);
+
+    });
+
+
+    updateProgress();
+
+}
+
+
+
+/* ==================================================
+   إضافة نشاط
+================================================== */
+
+function openModal() {
+
+    document
+        .getElementById("activityModal")
+        .classList.remove("hidden");
+
+}
+
+
+function closeModal() {
+
+    document
+        .getElementById("activityModal")
+        .classList.add("hidden");
+
+}
+
+
+
+/* ==================================================
+   حفظ النشاط
+================================================== */
+
+function addActivity() {
+
+    const name =
+        document.getElementById("activityName").value.trim();
+
+    const time =
+        document.getElementById("activityTime").value;
+
+    const category =
+        document.getElementById("activityCategory").value;
+
+    const reminder =
+        document.getElementById("activityReminder").value;
+
+
+    if (!name || !time) {
+
+        alert(
+            "اكتبي اسم النشاط وحددي الوقت أولًا 🌸"
+        );
+
+        return;
+
+    }
+
+
+    const activity = {
+
+        name: name,
+
+        time: time,
+
+        category: category,
+
+        reminder: reminder,
+
+        completed: false
+
+    };
+
+
+    activities.push(activity);
+
+
+    localStorage.setItem(
+        "nonoActivities",
+        JSON.stringify(activities)
+    );
+
+
+    document.getElementById("activityName").value = "";
+
+    document.getElementById("activityTime").value = "";
+
+
+    closeModal();
+
+
+    renderActivities();
+
+
+    /*
+      طلب إذن الإشعارات
+    */
+
+    if (
+        reminder === "yes" &&
+        "Notification" in window
+    ) {
+
+        Notification.requestPermission();
+
+    }
+
+}
+
+
+
+/* ==================================================
+   إكمال النشاط
+================================================== */
+
+function completeActivity(index) {
+
+    activities[index].completed =
+        !activities[index].completed;
+
+
+    localStorage.setItem(
+        "nonoActivities",
+        JSON.stringify(activities)
+    );
+
+
+    renderActivities();
+
+}
+
+
+
+/* ==================================================
+   حذف النشاط
+================================================== */
+
+function deleteActivity(index) {
+
+    const answer =
+        confirm("هل تريدين حذف هذا النشاط؟");
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    activities.splice(index, 1);
+
+
+    localStorage.setItem(
+        "nonoActivities",
+        JSON.stringify(activities)
+    );
+
+
+    renderActivities();
+
+}
+
+
+
+/* ==================================================
+   حساب نسبة الإنجاز
+================================================== */
+
+function updateProgress() {
+
+    const total =
+        activities.length;
+
+
+    const completed =
+        activities.filter(
+            activity => activity.completed
+        ).length;
+
+
+    let percentage = 0;
+
+
+    if (total > 0) {
+
+        percentage =
+            Math.round(
+                (completed / total) * 100
+            );
+
+    }
+
+
+    document.getElementById("percentage")
+        .textContent =
+        percentage + "%";
+
+
+    document.getElementById("progress")
+        .style.width =
+        percentage + "%";
+
+}
+
+
+
+/* ==================================================
+   الوضع الليلي
+================================================== */
+
+function toggleDarkMode() {
+
+    document
+        .body
+        .classList
+        .toggle("dark");
+
+}
+
+
+
+/* ==================================================
+   تسجيل الخروج
+================================================== */
+
+function logout() {
+
+    showPage("home");
+
+}
+
+
+
+/* ==================================================
+   تشغيل الإشعارات
+================================================== */
+
+function checkNotifications() {
+
+    if (!("Notification" in window)) {
+
+        return;
+
+    }
+
+
+    if (Notification.permission !== "granted") {
+
+        return;
+
+    }
+
+
+    const now =
+        new Date();
+
+
+    const currentTime =
+        now.toTimeString().slice(0, 5);
+
+
+    activities.forEach(function(activity) {
+
+        if (
+            activity.time === currentTime &&
+            activity.reminder === "yes" &&
+            !activity.completed
+        ) {
+
+            new Notification(
+                "Nono Pink 🌸",
+                {
+                    body:
+                        "حان الآن وقت: " +
+                        activity.name
+                }
+            );
+
+        }
+
+    });
+
+}
+
+
+/*
+  نفحص الوقت كل دقيقة.
+*/
+
+setInterval(
+    checkNotifications,
+    60000
+);
+
+
+
+/* ==================================================
+   بدء الموقع
+================================================== */
+
+showPage("home");
+
+
+</script>
+
+</body>
+
+</html>
